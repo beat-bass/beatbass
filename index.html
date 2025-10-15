@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio de Desarrollador</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: cyan;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #1abc9c;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 1.5rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #1abc9c;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .presentacion {
+      text-align: center;
+    }
+
+    .presentacion img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #1abc9c;
+    }
+
+    .presentacion p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    #modal {
+      position: fixed;
+      display: none;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #1abc9c;
+    }
+
+    #modal.close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.2rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: #1abc9c;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.8rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #16a085;
+    }
+
+    #success-message {
+      display: none;
+      color: #27ae60;
+      font-weight: 700;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+      background: #f0f0f0;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Beat Bass</h1>
+</header>
+
+<nav>
+  <a href="#presentacion">Presentación</a>
+  <a href="#descripcion">Descripción</a>
+  <a href="#documentos">Documentos</a>
+  <a href="#galeria">Galería</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<main>
+  <section id="presentacion" class="presentacion">
+    <img src="img/logo.jpeg" alt="Foto de desarrollador" />
+    <p>Somos el grupo Beat Bass y este es nuestro portafolio con toda la información del proyecto</p>
+  </section>
+
+  <section id="descripcion">
+    <h2>Descripción del Proyecto</h2>
+    <p>El proyecto se trata de unos audífonos de conducción ósea diseñados para ayudar a relajar la tensión muscular y aliviar dolores de cabeza.</p>
+  </section>
+
+  <section id="documentos">
+    <h2>Documentos</h2>
+    <p><a href="https://www.canva.com/design/DAG10EI2dfw/-1OiSjP4MqTQhM8F3moyAQ/edit?utm_content=DAG10EI2dfw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver documento en Canva</a></p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería de Imágenes</h2>
+    <div class="gallery">
+      <img src="file:///C:/Users/202/AppData/Roaming/Microsoft/Windows/Network%20Shortcuts/quimera.jfif" alt="Proyecto 1" />
+      <img src="https://via.placeholder.com/400x300?text=Proyecto+2" alt="Proyecto 2" />
+      <img src="https://via.placeholder.com/400x300?text=Proyecto+3" alt="Proyecto 3" />
+      <img src="https://via.placeholder.com/400x300?text=Proyecto+4" alt="Proyecto 4" />
+      <img src="https://via.placeholder.com/400x300?text=Proyecto+5" alt="Proyecto 5" />
+    </div>
+  </section>
+
+  <div id="modal">
+    <span id="close-modal" style="position:absolute;top:20px;right:30px;font-size:2.5rem;color:white;cursor:pointer;">&times;</span>
+    <img src="" alt="Imagen ampliada" />
+  </div>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form class="contact-form" id="contact-form" novalidate>
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" required placeholder="Nombre" />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required placeholder="@email.com" />
+
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Mensaje"></textarea>
+
+      <button type="submit">Enviar</button>
+      <p id="success-message">¡Gracias por contactarme! Te responderé pronto.</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Beat Bass - Todos los derechos reservados
+</footer>
+
+<script>
+  const modal = document.getElementById('modal');
+  const modalImg = modal.querySelector('img');
+  const closeModalBtn = document.getElementById('close-modal');
+
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalImg.alt = '';
+    document.body.style.overflow = 'auto';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+      modalImg.alt = '';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    successMessage.style.display = 'block';
+    form.reset();
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>
