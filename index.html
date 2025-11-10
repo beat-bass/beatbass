@@ -1,323 +1,341 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio de Desarrollador</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Proyecto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
 
-    header h1 {
-      margin-bottom: 0.3rem;
-      font-weight: 700;
-      font-size: 2.5rem;
-    }
+        .main-title-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
 
-    header p {
-      font-style: italic;
-      font-size: 1.1rem;
-      opacity: 0.8;
-    }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    nav {
-      background: #34495e;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem 0;
-    }
+        .main-title {
+            font-size: 72px;
+            font-weight: 300;
+            font-family: 'Georgia', 'Garamond', serif;
+            color: white;
+            letter-spacing: 12px;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            margin: 0;
+            animation: pulse 6s ease-in-out infinite;
+        }
 
-    nav a {
-      color: cyan;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.01);
+            }
+        }
 
-    nav a:hover {
-      background: #1abc9c;
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem 4rem;
-    }
+        .section {
+            padding: 40px;
+            animation: slideIn 0.6s ease-out backwards;
+        }
 
-    section {
-      margin-bottom: 3rem;
-      background: white;
-      padding: 1.5rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-    }
+        .section:nth-child(even) {
+            background: rgba(102, 126, 234, 0.05);
+        }
 
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #1abc9c;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-    .presentacion {
-      text-align: center;
-    }
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
 
-    .presentacion img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 3px solid #1abc9c;
-    }
+        .logo-container {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
 
-    .presentacion p {
-      font-size: 1.1rem;
-      color: #555;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        .logo-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #667eea;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            /* REEMPLAZA 'URL_DE_TU_LOGO_AQUI' con la URL de tu imagen de logo */
+            background-image: url('https://i.postimg.cc/ZqLPm1Z6/8d6d188c-0920-46a4-8e70-03846080664f.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-    }
+        .logo-placeholder:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
 
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
+        .brief-description {
+            text-align: center;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+        .brief-description::before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            border-radius: 2px;
+        }
 
-    #modal {
-      position: fixed;
-      display: none;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+        .image-container {
+            text-align: center;
+        }
 
-    #modal img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #1abc9c;
-    }
+        .small-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background: #f0f0f0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            /* REEMPLAZA 'URL_DE_TU_IMAGEN_PEQUEÑA_AQUI' con la URL de tu imagen */
+            background-image: url('URL_DE_TU_IMAGEN_PEQUEÑA_AQUI');
+            background-size: cover;
+            background-position: center;
+        }
 
-    #modal.close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 2.5rem;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
+        .small-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
 
-    .contact-form label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-      color: #2c3e50;
-    }
+        .large-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.6rem 1rem;
-      margin-bottom: 1.2rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      resize: vertical;
-    }
+        .project-description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
 
-    .contact-form button {
-      background: #1abc9c;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.8rem;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+        .link-container {
+            text-align: center;
+        }
 
-    .contact-form button:hover {
-      background: #16a085;
-    }
+        .link-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
 
-    #success-message {
-      display: none;
-      color: #27ae60;
-      font-weight: 700;
-      margin-top: -1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
 
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      color: #777;
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-      background: #f0f0f0;
-    }
+        .link-button::before {
+            content: '📄 ';
+            margin-right: 8px;
+        }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-    }
-  </style>
+        .video-link::before {
+            content: '🎥 ';
+        }
+
+        .excel-link::before {
+            content: '📊 ';
+        }
+
+        .section-label {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 30px 20px;
+            }
+
+            .logo-placeholder {
+                width: 150px;
+                height: 150px;
+            }
+
+            .large-text {
+                font-size: 24px;
+            }
+
+            .main-title {
+                font-size: 42px;
+                letter-spacing: 4px;
+            }
+
+            .link-button {
+                display: block;
+                margin: 10px auto !important;
+                max-width: 280px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Título Principal Beat Bass -->
+        <div class="main-title-container">
+            <h1 class="main-title">BEAT BASS</h1>
+        </div>
 
-<header>
-  <h1>Beat Bass</h1>
-</header>
+        <!-- 1. Logo -->
+        <div class="logo-container section">
+            <div class="logo-placeholder">
+               
+            </div>
+        </div>
 
-<nav>
-  <a href="#presentacion">Presentación</a>
-  <a href="#descripcion">Descripción</a>
-  <a href="#documentos">Documentos</a>
-  <a href="#galeria">Galería</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+        <!-- 2. Descripción Breve -->
+        <div class="section brief-description">
+            <span class="section-label">Descripción Breve</span>
+            <p>Somos Beat Bass, estudiantes de automatización industrial que buscan por medio de su proyecto brindar un apoyo y medio para problemas de salud principalmente relacionados al estres. Conoce un poco mas sobre nosotros.</p>
+        </div>
 
-<main>
-  <section id="presentacion" class="presentacion">
-    <img src="img/logo.jpeg" alt="Foto de desarrollador" />
-    <p>Somos el grupo Beat Bass y este es nuestro portafolio con toda la información del proyecto</p>
-  </section>
+        <!-- 3. Imagen Pequeña -->
+        <div class="section image-container">
+            <div class="small-image">
+                Imagen 150x150
+            </div>
+        </div>
 
-  <section id="descripcion">
-    <h2>Descripción del Proyecto</h2>
-    <p>El proyecto se trata de unos audífonos de conducción ósea diseñados para ayudar a relajar la tensión muscular y aliviar dolores de cabeza.</p>
-  </section>
+        <!-- 4. Justificación del Proyecto -->
+        <div class="section">
+            <span class="section-label">Justificación del Proyecto</span>
+            <p class="project-description">
+                Nosotros somos los desarrolladores de esta iniciativa por y para el bienestar de la gente, enfocandonos en las diferentes situaciones del dia a dia quisimos crear un modelo de auriculares de conducción osea que favoreciera y ayudara a sobrellevar y aliviar el estres pues somos conscientes y hemos vivido, al igual que muchas personas, algunos de los padecimientos generados por el propio estres esta es una de las razones por las que enfocamos nuestro trabajo a la contrucción de un dispositivo que aunque podria no ser la solución definitiva si que podria ayudar a sobrellevar con un poco mas de ligereza el dia a dia.
+            </p>
+        </div>
 
-  <section id="documentos">
-    <h2>Documentos</h2>
-    <p><a href="https://www.canva.com/design/DAG10EI2dfw/-1OiSjP4MqTQhM8F3moyAQ/edit?utm_content=DAG10EI2dfw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver documento en Canva</a></p>
-  </section>
+        <!-- 5. Descripción del Proyecto -->
+        <div class="section">
+            <span class="section-label">Descripción del Proyecto</span>
+            <p class="project-description">
+                El proyecto aborda problemas fisicos actuales relacionados al estres y manejo del mismo. Buscamos, por medio de un modelo de auriculares de conducción osea, ayudar con el manejo de estres, tensiones musculares y dolores de cabeza con vibraciones generadas por los propios auriculares. Estudiamos, por medio de este proyecto, la forma en que las vibraciones en el area ayudan y benefician la mejoria de la salud.
+            </p>
+        </div>
 
-  <section id="galeria">
-    <h2>Galería de Imágenes</h2>
-    <div class="gallery">
-      <img src="file:///C:/Users/202/AppData/Roaming/Microsoft/Windows/Network%20Shortcuts/quimera.jfif" alt="Proyecto 1" />
-      <img src="https://via.placeholder.com/400x300?text=Proyecto+2" alt="Proyecto 2" />
-      <img src="https://via.placeholder.com/400x300?text=Proyecto+3" alt="Proyecto 3" />
-      <img src="https://via.placeholder.com/400x300?text=Proyecto+4" alt="Proyecto 4" />
-      <img src="https://via.placeholder.com/400x300?text=Proyecto+5" alt="Proyecto 5" />
+        <!-- 6. Link a Documento -->
+        <div class="section link-container">
+            <span class="section-label">Documentación</span>
+            <!-- REEMPLAZA '#documento' con tu URL real -->
+            <a href="https://www.canva.com/design/DAG10EI2dfw/-1OiSjP4MqTQhM8F3moyAQ/edit?utm_content=DAG10EI2dfw&ut… target=" target="_blank" rel="noopener noreferrer" class="link-button">Ver Documento Completo</a>
+        </div>
+
+        <!-- 7. Link a Video -->
+        <div class="section link-container">
+            <span class="section-label">Video Demostrativo</span>
+            <!-- REEMPLAZA '#video' con tu URL real -->
+            <a href="https://youtu.be/M56eakSlFto" target="_blank" rel="noopener noreferrer" class="link-button video-link">Ver Video del Proyecto</a>
+        </div>
+
+        <!-- 8. Link a Matriz Excel y Encuesta -->
+        <div class="section link-container">
+            <span class="section-label">Datos y Análisis</span>
+            <!-- REEMPLAZA '#excel' y '#encuesta' con tus URLs reales -->
+            <a href="https://academiausbbogedu.sharepoint.com/:x:/r/sites/BEAT-BASS/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7Bf42b16ed-abe5-4873-9a21-12efe5c1fe5f%7D&wdOrigin=TEAMS-WEB.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1761093935859&web=1" target="_blank" rel="noopener noreferrer" class="link-button excel-link">Ver Matriz</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKgRFwd-Avj2LOmJSJXIk8TgHclPz_kBKBKgDWWuW4Okg4ow/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="link-button" style="margin-left: 15px;">Ver Encuesta</a>
+        </div>
     </div>
-  </section>
-
-  <div id="modal">
-    <span id="close-modal" style="position:absolute;top:20px;right:30px;font-size:2.5rem;color:white;cursor:pointer;">&times;</span>
-    <img src="" alt="Imagen ampliada" />
-  </div>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form class="contact-form" id="contact-form" novalidate>
-      <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" required placeholder="Nombre" />
-
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required placeholder="@email.com" />
-
-      <label for="message">Mensaje</label>
-      <textarea id="message" name="message" rows="5" required placeholder="Mensaje"></textarea>
-
-      <button type="submit">Enviar</button>
-      <p id="success-message">¡Gracias por contactarme! Te responderé pronto.</p>
-    </form>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Beat Bass - Todos los derechos reservados
-</footer>
-
-<script>
-  const modal = document.getElementById('modal');
-  const modalImg = modal.querySelector('img');
-  const closeModalBtn = document.getElementById('close-modal');
-
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalImg.src = '';
-    modalImg.alt = '';
-    document.body.style.overflow = 'auto';
-  });
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      modalImg.src = '';
-      modalImg.alt = '';
-      document.body.style.overflow = 'auto';
-    }
-  });
-
-  const form = document.getElementById('contact-form');
-  const successMessage = document.getElementById('success-message');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    successMessage.style.display = 'block';
-    form.reset();
-    setTimeout(() => {
-      successMessage.style.display = 'none';
-    }, 5000);
-  });
-</script>
-
 </body>
 </html>
