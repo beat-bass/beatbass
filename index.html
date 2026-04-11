@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio del Proyecto</title>
+  <title>Beat Bass · Portafolio</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -13,7 +13,7 @@
       color: #e2e8f0;
     }
 
-    /* ─── NAV ─── */
+    /* ─── NAV PRINCIPAL ─── */
     .nav {
       background: #0d0f1a;
       border-bottom: 1px solid #1e2130;
@@ -21,12 +21,40 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .nav-logo { font-size: 15px; font-weight: 500; color: #afa9ec; }
     .nav-logo span { color: #5f6880; font-weight: 400; font-size: 13px; margin-left: 8px; }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { font-size: 13px; color: #5f6880; text-decoration: none; }
-    .nav-links a:hover { color: #afa9ec; }
+    .nav-links { display: flex; gap: 0.5rem; }
+
+    /* ─── TABS DE NAVEGACIÓN ─── */
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 0.45rem 1rem;
+      font-size: 13px;
+      color: #5f6880;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .tab-btn:hover { color: #afa9ec; background: #16192a; }
+    .tab-btn.active {
+      color: #eeedfe;
+      background: #534ab7;
+      border-color: #7f77dd;
+    }
+
+    /* ─── PÁGINAS ─── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ══════════════════════════════════
+       PÁGINA 1 — PORTAFOLIO OSCURO
+    ══════════════════════════════════ */
 
     /* ─── HERO ─── */
     .hero {
@@ -114,8 +142,6 @@
       justify-content: center;
       align-items: center;
     }
-    /* ══ EDITABLE: reemplaza el div por <img src="logo.png"
-       style="max-width:340px;width:100%;display:block;"> ══ */
     .logo-slot {
       background: #16192a;
       border: 1.5px dashed #2e3355;
@@ -128,27 +154,12 @@
       justify-content: center;
       gap: 12px;
       position: relative;
+      overflow: hidden;
     }
-    .logo-slot .edit-hint {
-      position: absolute;
-      top: 8px; right: 12px;
-      font-size: 10px;
-      color: #7f77dd99;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-    .logo-slot-icon {
-      width: 52px; height: 52px;
-      border-radius: 12px;
-      background: #7f77dd22;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .logo-slot-icon svg { width: 26px; height: 26px; opacity: 0.6; }
-    .logo-slot span {
-      font-size: 12px;
-      color: #5f6880;
-      text-align: center;
-      padding: 0 1.5rem;
+    .logo-slot img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      border-radius: 14px;
     }
 
     /* ─── SLOTS DE IMÁGENES ─── */
@@ -166,6 +177,7 @@
       position: relative;
       overflow: hidden;
     }
+    .img-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; }
     .img-slot-icon {
       width: 36px; height: 36px;
       border-radius: 8px;
@@ -174,10 +186,6 @@
     }
     .img-slot-icon svg { width: 18px; height: 18px; opacity: 0.6; }
     .img-slot span { font-size: 11px; color: #5f6880; text-align: center; padding: 0 1rem; }
-    .img-slot .slot-num {
-      position: absolute; top: 8px; left: 10px;
-      font-size: 10px; color: #7f77dd99; font-weight: 500;
-    }
 
     /* ─── EQUIPO ─── */
     .team-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -198,7 +206,7 @@
     .team-name { font-size: 14px; color: #d4cfff; font-weight: 500; }
     .team-role { font-size: 12px; color: #5f6880; margin-top: 2px; }
 
-    /* ─── BOTONES DE DOCUMENTOS ─── */
+    /* ─── BOTONES DOCS (pág 1) ─── */
     .docs-section {
       background: #0d0f1a;
       border-top: 1px solid #1e2130;
@@ -232,179 +240,363 @@
     }
     .doc-btn:hover { background: #6358cc; border-color: #afa9ec; }
     .doc-btn svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.9; }
-
     .footer-note { font-size: 12px; color: #3a3f55; margin-top: 1rem; }
+
+    /* ══════════════════════════════════
+       PÁGINA 2 — PORTAFOLIO CLARO
+    ══════════════════════════════════ */
+    .page2-body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .p2-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.97);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .p2-main-title {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    /* ══ EDITABLE: título grande de la página 2 ══ */
+    .p2-main-title h1 {
+      font-size: 4rem;
+      font-weight: 300;
+      font-family: Georgia, serif;
+      color: white;
+      letter-spacing: 12px;
+    }
+    .p2-section {
+      padding: 2.5rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+    .p2-section:last-child { border-bottom: none; }
+    .p2-section:nth-child(even) { background: rgba(102,126,234,0.04); }
+    .p2-label {
+      display: block;
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Logo página 2 */
+    .p2-logo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .p2-logo-box {
+      width: 200px; height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      background: #f0f0f0;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s;
+    }
+    .p2-logo-box:hover { transform: scale(1.05) rotate(2deg); }
+    .p2-logo-box img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Imagen pequeña página 2 */
+    .p2-img-wrap { display: flex; justify-content: center; }
+    .p2-small-img {
+      width: 300px; height: 200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: #f0f0f0;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    .p2-small-img:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    .p2-small-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Textos página 2 */
+    .p2-big-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .p2-text {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .p2-brief {
+      color: #555;
+      font-size: 17px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    .p2-brief::before {
+      content: '';
+      display: block;
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      margin: 0 auto 1.25rem;
+      border-radius: 2px;
+    }
+
+    /* Botones página 2 */
+    .p2-link-section { text-align: center; }
+    .p2-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+      margin: 6px;
+    }
+    .p2-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(102,126,234,0.6); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .docs-grid { grid-template-columns: 1fr; }
+      .p2-main-title h1 { font-size: 2.5rem; letter-spacing: 4px; }
+      .hero h1 { font-size: 1.8rem; }
+      .nav { flex-wrap: wrap; gap: 0.5rem; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ═══════════════════════════════════════════
+       BARRA DE NAVEGACIÓN PRINCIPAL
+       ══ EDITABLE: cambia los nombres de los tabs ══
+  ═══════════════════════════════════════════ -->
   <nav class="nav">
     <div class="nav-logo">
-      Beat Bass <!-- ══ EDITABLE: nombre principal ══ -->
+      Beat Bass <!-- ══ EDITABLE: nombre del proyecto ══ -->
       <span>Portafolio</span>
     </div>
     <div class="nav-links">
-      <a href="#">Inicio</a>
-      <a href="#">Sobre el proyecto</a>
-      <a href="#">Contacto</a>
+      <!-- ══ EDITABLE: cambia el nombre de cada pestaña ══ -->
+      <button class="tab-btn active" onclick="showPage(1, this)">2do Semestre</button>
+      <button class="tab-btn" onclick="showPage(2, this)">1er Semestre</button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-badge">Proyecto integrador 2026</div> <!-- ══ EDITABLE ══ -->
-    <h1>Beat Bass</h1> <!-- ══ EDITABLE: título principal ══ -->
-    <p>
-      <!-- ══ EDITABLE: descripción breve ══ -->
-      Somos Beat Bass, estudiantes de automatización industrial que buscan por medio de su proyecto brindar un apoyo y medio para problemas de salud principalmente relacionados al estres. Conoce un poco mas sobre nosotros.
-    </p>
-    <div class="hero-meta">
-      <span><strong>Fecha:</strong> Abril 2026</span>    <!-- ══ EDITABLE ══ -->
-      <span><strong>Estado:</strong> En curso</span>      <!-- ══ EDITABLE ══ -->
-      <span><strong>Categoría:</strong> Tecnología en Automatización Industrial</span> <!-- ══ EDITABLE ══ -->
-    </div>
-  </div>
+  <!-- ══════════════════════════════════════════════════
+       PÁGINA 1 — PORTAFOLIO OSCURO
+       Nombre en el tab: "Presentación" (editable arriba)
+  ══════════════════════════════════════════════════ -->
+  <div id="page1" class="page active">
 
-  <!-- ═══════════════════════════════════════════
-       LOGO — espacio centrado para una sola imagen
-       Para poner tu logo reemplaza el
-       <div class="logo-slot"> completo con:
-       <img src="logo.png"
-            style="max-width:340px;width:100%;display:block;border-radius:12px;">
-  ═══════════════════════════════════════════ -->
-  <div class="logo-section">
-    <div class="logo-slot">
-      <span class="edit-hint">✏ LOGO</span>
-      <div class="logo-slot-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#afa9ec" stroke-width="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="3"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <path d="M21 15l-5-5L5 21"/>
-        </svg>
-      </div>
-      <span>Coloca el logo del proyecto aquí<br>src="https://i.postimg.cc/ZqLPm1Z6/8d6d188c-0920-46a4-8e70-03846080664f.jpg"</span>
-    </div>
-  </div>
-
-  <!-- DESCRIPCIÓN -->
-  <div class="section">
-    <div class="section-label">Descripción</div>
-    <div class="section-title">¿De qué trata el proyecto?</div> <!-- ══ EDITABLE ══ -->
-    <div class="text-block">
-      <span class="edit-hint">✏ EDITAR TEXTO</span>
-      <!-- ══ EDITABLE: reemplaza con tu descripción ══ -->
-      El proyecto aborda problemas fisicos actuales relacionados al estres y manejo del mismo. Buscamos, por medio de un modelo de auriculares de conducción osea, ayudar con el manejo de estres, tensiones musculares y dolores de cabeza con vibraciones generadas por los propios auriculares. Estudiamos, por medio de este proyecto, la forma en que las vibraciones en el area ayudan y benefician la mejoria de la salud.</p>
-    </div>
-  </div>
-
-  <!-- IMAGEN DESTACADA -->
-  <div class="section">
-    <div class="section-label">Imagen destacada</div>
-    <div class="section-title">Vista principal</div>
-    <!-- ══ EDITABLE: reemplaza con <img src="imagen-principal.jpg"
-         style="width:100%;border-radius:10px;display:block;"> ══ -->
-    <div class="img-slot">
-      <span class="slot-num">IMG PRINCIPAL</span>
-      <div class="img-slot-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#afa9ec" stroke-width="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="3"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <path d="M21 15l-5-5L5 21"/>
-        </svg>
-      </div>
-      <span>Aqui iria la imagen de las photoboards conectadas al o a los parlantes</span>
-    </div>
-  </div>
-
-  <!-- EQUIPO -->
-  <div class="section">
-    <div class="section-label">Equipo</div>
-    <div class="section-title">Integrantes del proyecto</div>
-    <div class="team-grid">
-      <!-- ══ EDITABLE: cambia iniciales, nombre y rol ══ -->
-      <div class="team-card">
-        <div class="avatar">JV</div>
-        <div><div class="team-name">Juan Vanegas</div><div class="team-role"></div></div>
-      </div>
-      <div class="team-card">
-        <div class="avatar">AR</div>
-        <div><div class="team-name">Angie Romero</div><div class="team-role"></div></div>
-      </div>
-      <div class="team-card">
-        <div class="avatar">KR</div>
-        <div><div class="team-name">Katherine Rincon</div><div class="team-role"></div></div>
+    <!-- HERO -->
+    <div class="hero">
+      <!-- ══ EDITABLE ══ -->
+      <div class="hero-badge">Proyecto integrador 2026</div>
+      <h1>Beat Bass</h1>
+      <p>Somos Beat Bass, estudiantes de automatización industrial que buscan por medio de su proyecto brindar un apoyo y medio para problemas de salud principalmente relacionados al estrés. Conoce un poco más sobre nosotros.</p>
+      <div class="hero-meta">
+        <span><strong>Fecha:</strong> Abril 2026</span>
+        <span><strong>Estado:</strong> En curso</span>
+        <span><strong>Categoría:</strong> Tecnología en Automatización Industrial</span>
       </div>
     </div>
-  </div>
 
-  <!-- CONCLUSIONES -->
-  <div class="section">
-    <div class="section-label">Conclusiones</div>
-    <div class="section-title">Resultados y aprendizajes</div> <!-- ══ EDITABLE ══ -->
-    <div class="text-block">
-      <span class="edit-hint">✏ EDITAR TEXTO</span>
-      <!-- ══ EDITABLE: reemplaza con tus conclusiones ══ -->
-      Buscamos unir un puente de diodos funcional con reguladores a uno o varios switch que al estar activos hagan que parlantes produzcan algun tipo de sonido
+    <!-- LOGO -->
+    <!-- ══ EDITABLE: para cambiar el logo reemplaza el src de la img ══ -->
+    <div class="logo-section">
+      <div class="logo-slot">
+        <img src="https://i.postimg.cc/ZqLPm1Z6/8d6d188c-0920-46a4-8e70-03846080664f.jpg" alt="Logo Beat Bass">
+      </div>
     </div>
-  </div>
 
-  <!-- ═══════════════════════════════════════════
-       BOTONES DE DOCUMENTOS
-       ══ EDITABLE: cambia href="#" por la URL
-          real de cada documento ══
-  ═══════════════════════════════════════════ -->
-  <div class="docs-section">
-    <div class="docs-inner">
-      <div class="docs-title">Documentación del proyecto</div>
-      <div class="docs-sub">Accede a todos los archivos y recursos relacionados</div>
-      <div class="docs-grid">
+    <!-- DESCRIPCIÓN -->
+    <div class="section">
+      <div class="section-label">Descripción</div>
+      <div class="section-title">¿De qué trata el proyecto?</div>
+      <div class="text-block">
+        <span class="edit-hint">✏ EDITAR TEXTO</span>
+        <!-- ══ EDITABLE ══ -->
+        El proyecto aborda problemas físicos actuales relacionados al estrés y manejo del mismo. Buscamos, por medio de un modelo de auriculares de conducción ósea, ayudar con el manejo de estrés, tensiones musculares y dolores de cabeza con vibraciones generadas por los propios auriculares. Estudiamos, por medio de este proyecto, la forma en que las vibraciones en el área ayudan y benefician la mejoría de la salud.
+      </div>
+    </div>
 
-        <!-- ══ EDITABLE: cambia href por la URL del documento 1 ══ -->
-        <a class="doc-btn" href="https://www.redalyc.org/pdf/834/83410203.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-          Documento 1
-        </a>
+    <!-- IMAGEN DESTACADA -->
+    <div class="section">
+      <div class="section-label">Imagen destacada</div>
+      <div class="section-title">Vista principal</div>
+      <!-- ══ EDITABLE: cambia el src por tu imagen ══ -->
+      <div class="img-slot">
+        <img src="" alt="Imagen principal del proyecto">
+      </div>
+    </div>
 
-        <!-- ══ EDITABLE: cambia href por la URL del documento 2 ══ -->
-        <a class="doc-btn" href="https://revistasanitariadeinvestigacion.com/el-estres-y-su-respuesta-fisiologica-y-psicologica-en-el-individuo/">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-          Documento 2
-        </a>
+    <!-- EQUIPO -->
+    <div class="section">
+      <div class="section-label">Equipo</div>
+      <div class="section-title">Integrantes del proyecto</div>
+      <div class="team-grid">
+        <!-- ══ EDITABLE: cambia iniciales, nombre y rol ══ -->
+        <div class="team-card">
+          <div class="avatar">JV</div>
+          <div><div class="team-name">Juan Vanegas</div><div class="team-role">Integrante</div></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">AR</div>
+          <div><div class="team-name">Angie Romero</div><div class="team-role">Integrante</div></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">KR</div>
+          <div><div class="team-name">Katherine Rincón</div><div class="team-role">Integrante</div></div>
+        </div>
+      </div>
+    </div>
 
-        <!-- ══ EDITABLE: cambia href por la URL del documento 3 ══ -->
-        <a class="doc-btn" href="https://repositorio.uca.edu.ar/bitstream/123456789/9774/1/estres-academico-estudiantes-universitarios.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-          Documento 3
-        </a>
+    <!-- CONCLUSIONES -->
+    <div class="section">
+      <div class="section-label">Conclusiones</div>
+      <div class="section-title">Resultados y aprendizajes</div>
+      <div class="text-block">
+        <span class="edit-hint">✏ EDITAR TEXTO</span>
+        <!-- ══ EDITABLE ══ -->
+        Buscamos unir un puente de diodos funcional con reguladores a uno o varios switch que al estar activos hagan que parlantes produzcan algún tipo de sonido que, por conducción ósea, genere las vibraciones necesarias para aliviar el estrés y las tensiones musculares en el área de aplicación.
+      </div>
+    </div>
 
-        <!-- ══ EDITABLE: cambia href por la URL del documento 4 ══ -->
-        <a class="doc-btn" href="https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S1695-61412022000100248">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-          Documento 4
-        </a>
+    <!-- BOTONES DE DOCUMENTOS -->
+    <div class="docs-section">
+      <div class="docs-inner">
+        <div class="docs-title">Documentación del proyecto</div>
+        <div class="docs-sub">Accede a todos los archivos y recursos relacionados</div>
+        <div class="docs-grid">
+          <!-- ══ EDITABLE: cambia href por la URL real ══ -->
+          <a class="doc-btn" href="https://www.redalyc.org/pdf/834/83410203.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Documento 1
+          </a>
+          <a class="doc-btn" href="https://revistasanitariadeinvestigacion.com/el-estres-y-su-respuesta-fisiologica-y-psicologica-en-el-individuo/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Documento 2
+          </a>
+          <a class="doc-btn" href="https://repositorio.uca.edu.ar/bitstream/123456789/9774/1/estres-academico-estudiantes-universitarios.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Documento 3
+          </a>
+          <a class="doc-btn" href="https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S1695-61412022000100248" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Documento 4
+          </a>
+        </div>
+        <!-- ══ EDITABLE: pie de página ══ -->
+        <div class="footer-note">© 2026 · Beat Bass · Tecnología en Automatización Industrial</div>
+      </div>
+    </div>
+
+  </div><!-- /page1 -->
+
+  <!-- ══════════════════════════════════════════════════
+       PÁGINA 2 — PORTAFOLIO CLARO
+       Nombre en el tab: "Documentación" (editable arriba)
+  ══════════════════════════════════════════════════ -->
+  <div id="page2" class="page">
+    <div class="page2-body">
+      <div class="p2-container">
+
+        <!-- TÍTULO PRINCIPAL -->
+        <!-- ══ EDITABLE: título grande de la página 2 ══ -->
+        <div class="p2-main-title">
+          <h1>BEAT BASS</h1>
+        </div>
+
+        <!-- LOGO -->
+        <!-- ══ EDITABLE: cambia el src por tu logo ══ -->
+        <div class="p2-section p2-logo-wrap">
+          <div class="p2-logo-box">
+            <img src="https://i.postimg.cc/ZqLPm1Z6/8d6d188c-0920-46a4-8e70-03846080664f.jpg" alt="Logo Beat Bass">
+          </div>
+        </div>
+
+        <!-- DESCRIPCIÓN BREVE -->
+        <div class="p2-section">
+          <span class="p2-label">Descripción Breve</span>
+          <!-- ══ EDITABLE ══ -->
+          <p class="p2-brief">Somos Beat Bass, estudiantes de automatización industrial que buscan por medio de su proyecto brindar un apoyo y medio para problemas de salud principalmente relacionados al estrés. Conoce un poco más sobre nosotros.</p>
+        </div>
+
+        <!-- IMAGEN PEQUEÑA -->
+        <!-- ══ EDITABLE: cambia el src por tu imagen ══ -->
+        <div class="p2-section p2-img-wrap">
+          <div class="p2-small-img">
+            <img src="https://i.postimg.cc/90JMy0p9/Multimedia-1.jpg" alt="Imagen del proyecto">
+          </div>
+        </div>
+
+        <!-- JUSTIFICACIÓN -->
+        <div class="p2-section">
+          <span class="p2-label">Justificación del Proyecto</span>
+          <!-- ══ EDITABLE ══ -->
+          <p class="p2-text">Nosotros somos los desarrolladores de esta iniciativa por y para el bienestar de la gente, enfocándonos en las diferentes situaciones del día a día quisimos crear un modelo de auriculares de conducción ósea que favoreciera y ayudara a sobrellevar y aliviar el estrés, pues somos conscientes y hemos vivido, al igual que muchas personas, algunos de los padecimientos generados por el propio estrés. Esta es una de las razones por las que enfocamos nuestro trabajo a la construcción de un dispositivo que, aunque podría no ser la solución definitiva, sí podría ayudar a sobrellevar con un poco más de ligereza el día a día.</p>
+        </div>
+
+        <!-- DESCRIPCIÓN DEL PROYECTO -->
+        <div class="p2-section">
+          <span class="p2-label">Descripción del Proyecto</span>
+          <!-- ══ EDITABLE ══ -->
+          <p class="p2-text">El proyecto aborda problemas físicos actuales relacionados al estrés y manejo del mismo. Buscamos, por medio de un modelo de auriculares de conducción ósea, ayudar con el manejo de estrés, tensiones musculares y dolores de cabeza con vibraciones generadas por los propios auriculares. Estudiamos, por medio de este proyecto, la forma en que las vibraciones en el área ayudan y benefician la mejoría de la salud.</p>
+        </div>
+
+        <!-- DOCUMENTO -->
+        <div class="p2-section p2-link-section">
+          <span class="p2-label">Documentación</span>
+          <!-- ══ EDITABLE: cambia href por tu URL ══ -->
+          <a href="https://www.canva.com/design/DAG10EI2dfw/-1OiSjP4MqTQhM8F3moyAQ/edit" target="_blank" class="p2-btn">📄 Ver Documento Completo</a>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="p2-section p2-link-section">
+          <span class="p2-label">Video Demostrativo</span>
+          <!-- ══ EDITABLE: cambia href por tu URL ══ -->
+          <a href="https://youtu.be/M56eakSlFto" target="_blank" class="p2-btn">🎥 Ver Video del Proyecto</a>
+        </div>
+
+        <!-- MATRIZ Y ENCUESTA -->
+        <div class="p2-section p2-link-section">
+          <span class="p2-label">Datos y Análisis</span>
+          <!-- ══ EDITABLE: cambia href por tu URL ══ -->
+          <a href="https://academiausbbogedu.sharepoint.com/:x:/r/sites/BEAT-BASS/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7Bf42b16ed-abe5-4873-9a21-12efe5c1fe5f%7D" target="_blank" class="p2-btn">📊 Ver Matriz</a>
+          <!-- ══ EDITABLE: cambia href por tu URL ══ -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKgRFwd-Avj2LOmJSJXIk8TgHclPz_kBKBKgDWWuW4Okg4ow/viewform" target="_blank" class="p2-btn">📋 Ver Encuesta</a>
+        </div>
 
       </div>
-      <!-- ══ EDITABLE: pie de página ══ -->
-      <div class="footer-note">© 2024 · Nombre del proyecto · Institución o empresa</div>
     </div>
-  </div>
+  </div><!-- /page2 -->
+
+  <script>
+    // ══ EDITABLE: puedes cambiar los IDs si añades más páginas ══
+    function showPage(num, btn) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('page' + num).classList.add('active');
+      btn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
-
 
 
 
