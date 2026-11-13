@@ -30,6 +30,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
 .section-label{color:#7f77dd}.p3-label{color:#4fbf85}
 .section-title,.p3-title{font-size:1.3rem;font-weight:500;margin-bottom:1.25rem;text-align:center}
 .section-title{color:#d4cfff}.p3-title{color:#c9f2da}
+.p3-subtitle{font-size:12px;color:#6d8c7c;text-align:center;margin:-.75rem 0 1.25rem;letter-spacing:.04em;text-transform:uppercase}
 .hero,.p3-hero{padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 .hero{background:linear-gradient(135deg,#13151f,#1a1d2e);border-bottom:1px solid #2a2d3e}
 .hero-badge,.p3-badge{display:inline-block;border-radius:20px;font-size:12px;padding:4px 14px;margin-bottom:1rem;letter-spacing:.06em;text-transform:uppercase}
@@ -152,7 +153,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
 .p3-hero-meta span{color:#b6d8c5}
 .p3-hero-meta strong{color:#eafff2}
 
-.p3-gps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.p3-gps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .p3-videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .p3-costos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .p3-gps-card,.p3-video-card,.p3-costo-card{background:#10281bcc;border:1px solid #1f4530;border-radius:12px;overflow:hidden;transition:.25s;backdrop-filter:blur(2px)}
@@ -161,7 +162,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
 .p3-gps-photo,.p3-costo-photo{aspect-ratio:4/3;background:#0c2015;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .p3-costo-photo{border-bottom:1px solid #1f4530}
 .p3-gps-photo img,.p3-costo-photo img{width:100%;height:100%;object-fit:cover}
-.p3-video-box{aspect-ratio:16/9;background:#0c2015;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:hidden}
+.p3-video-box{aspect-ratio:16/9;background:#0c2015;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:hidden;text-decoration:none}
 .p3-video-box iframe,.p3-video-box video{width:100%;height:100%;border:0;display:block}
 .p3-video-box svg{width:26px;height:26px;opacity:.45}
 .p3-video-box span{font-size:11px;color:#6d8c7c;text-align:center;padding:0 1rem}
@@ -172,6 +173,38 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
 .p3-img-slot{width:100%;aspect-ratio:21/9;background:#10281b;border:1.5px dashed #2b5c40;border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:.25s}
 .p3-img-slot:hover{border-color:#3f9c6c;transform:translateY(-3px)}
 .p3-img-slot img{width:100%;height:100%;object-fit:cover}
+
+.p3-total{
+  margin:1.75rem auto 0;max-width:340px;
+  background:linear-gradient(150deg,#1a4a32,#123322);
+  border:1px solid #3f9c6c;border-radius:14px;
+  padding:1.1rem 1.5rem;text-align:center;
+  box-shadow:0 12px 30px #00000059;
+}
+.p3-total-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#8fe0b3;margin-bottom:.4rem}
+.p3-total-value{font-size:1.6rem;font-weight:600;color:#eafff2;letter-spacing:.02em}
+
+.p3-diagrama-slot{width:100%;background:#10281b;border:1px solid #1f4530;border-radius:14px;padding:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:.25s}
+.p3-diagrama-slot:hover{border-color:#3f9c6c}
+.p3-diagrama-slot img{width:100%;height:auto;display:block;border-radius:8px}
+.p3-anexo{display:flex;justify-content:center;margin-top:1.5rem}
+.p3-anexo-btn{
+  display:inline-flex;align-items:center;gap:12px;padding:1.15rem 2.4rem;
+  background:linear-gradient(135deg,#2a8a5a,#1f6b45);border:1px solid #8fe0b3;
+  border-radius:14px;color:#eafff2;text-decoration:none;font-size:16px;font-weight:600;
+  letter-spacing:.02em;transition:.22s;box-shadow:0 10px 26px #00000059;
+}
+.p3-anexo-btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px #00000080;background:linear-gradient(135deg,#33a06a,#2a8a5a)}
+.p3-anexo-btn svg{width:22px;height:22px;flex-shrink:0}
+
+.p3-doc-btn-big{
+  display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  padding:1.4rem 3.2rem;border-radius:16px;font-size:17px;font-weight:600;
+  background:linear-gradient(135deg,#2a8a5a,#1f6b45);border:1px solid #8fe0b3;
+  color:#eafff2;text-decoration:none;transition:.22s;box-shadow:0 12px 30px #00000066;
+}
+.p3-doc-btn-big:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0000008c;background:linear-gradient(135deg,#33a06a,#2a8a5a)}
+.p3-doc-btn-big svg{width:24px;height:24px;flex-shrink:0}
 
 .zoomable{cursor:zoom-in;transition:filter .25s}
 .zoomable:hover{filter:brightness(1.08)}
@@ -190,6 +223,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
   .p3-hero-logo{width:210px;height:145px}
   .nav{flex-wrap:wrap;gap:.5rem}
   .p3-side{display:none}
+  .p3-doc-btn-big{padding:1.2rem 2rem;font-size:15px}
 }
 </style>
 </head>
@@ -292,7 +326,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
         <a href="https://www.canva.com/design/DAG10EI2dfw/-1OiSjP4MqTQhM8F3moyAQ/edit" target="_blank" class="p2-btn">📄 Ver Documento Completo</a>
       </div>
 
-      <div class="p2-section p2-link-section">
+      <div class="p2-section p
         <span class="p2-label">Video Demostrativo</span>
         <a href="https://youtu.be/M56eakSlFto" target="_blank" class="p2-btn">🎥 Ver Video del Proyecto</a>
       </div>
@@ -315,7 +349,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
     <div class="p3-hero">
       <div class="p3-badge">Proyecto integrador 2026 · III Semestre</div>
       <div class="p3-hero-logo"><img class="zoomable" src="https://i.postimg.cc/qBhQ4T99/Agro-View.jpg" alt="Logo AgroView"></div>
-      <p>Ahora enfocados en la agricultura: un robot autónomo que apoya las labores del campo. Conoce un poco más sobre esta nueva etapa del proyecto.</p>
+      <p>Proyecto para hacer la agricultura más fácil y automatizarla.</p>
       <div class="p3-hero-meta">
         <span><strong>Fecha:</strong> Noviembre 2026</span>
         <span><strong>Estado:</strong> En curso</span>
@@ -324,47 +358,68 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
     </div>
 
     <div class="p3-section">
-      <div class="p3-label">Descripción</div>
-      <div class="p3-title">¿De qué trata el proyecto?</div>
-      <div class="p3-text-block">En este tercer semestre el proyecto da un giro hacia el sector agrícola. Buscamos desarrollar un robot autónomo capaz de desplazarse por cultivos y apoyar tareas como el monitoreo del terreno y la detección de condiciones que afectan a los sembrados. La idea es que la automatización aporte herramientas concretas al trabajo del campo, reduciendo el esfuerzo manual y mejorando el seguimiento de los cultivos.</div>
-    </div>
-
-    <div class="p3-section">
-      <div class="p3-label">Imagen destacada</div>
-      <div class="p3-title">Robot agricultor</div>
-      <div class="p3-img-slot"><img class="zoomable" src="" alt="Robot agricultor"></div>
-    </div>
-
-    <div class="p3-section">
       <div class="p3-label">Equipo</div>
       <div class="p3-title">Integrantes del proyecto</div>
       <div class="p3-team-grid"></div>
-   
+    </div>
+
     <div class="p3-section">
-      <div class="p3-label">Avances</div>
-      <div class="p3-title">Pruebas de GPS</div>
-      <div class="p3-gps-grid" data-gps></div>
+      <div class="p3-label">Descripción</div>
+      <div class="p3-title">¿De qué trata el proyecto?</div>
+      <div class="p3-text-block">Este proyecto busca abordar las necesidades actuales relacionadas con el avance tecnológico en las distintas industrias y el poco enfoque que se le ha dado a este avance con relación a la agricultura. Queremos, a partir de la construcción de un pequeño modelo robótico, facilitar y automatizar un proceso que puede ser complejo, largo y cansado para los agricultores con el fin de mejorar la selección y caracterización de los cultivos, junto con la reducción del tiempo que lleva realizar las revisiones periódicas para ver el avance del crecimiento y los cambios que pueden presentarse por plagas, ambientes o un mal estado del propio cultivo.</div>
+      <div class="p3-anexo">
+        <a class="p3-doc-btn-big" href="falta" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Documento
+        </a>
+      </div>
+    </div>
+
+    <div class="p3-section">
+      <div class="p3-title">Robot</div>
+      <div class="p3-img-slot"><img class="zoomable" src="https://i.postimg.cc/Y9Mp7kr5/robot.jpg" alt="Robot"></div>
     </div>
 
     <div class="p3-section">
       <div class="p3-label">Avances</div>
-      <div class="p3-title">Sensores y motores en funcionamiento</div>
-      <div class="p3-videos-grid">
+      <div class="p3-title">Pruebas y funcionamiento</div>
 
+      <div class="p3-subtitle">Pruebas de GPS</div>
+      <div class="p3-gps-grid">
+        <div class="p3-gps-card">
+          <div class="p3-gps-photo"><img class="zoomable" src="https://i.postimg.cc/jSy0S9FJ/image.png" alt="Prueba GPS 1"></div>
+          <div class="p3-video-caption">Prueba GPS 1</div>
+        </div>
+        <div class="p3-gps-card">
+          <div class="p3-gps-photo"><img class="zoomable" src="https://i.postimg.cc/ZnWXtDNJ/Prueba-2.jpg" alt="Prueba GPS 2"></div>
+          <div class="p3-video-caption">Prueba GPS 2</div>
+        </div>
+      </div>
+
+      <div class="p3-subtitle" style="margin-top:2rem">Sensores y motores</div>
+      <div class="p3-videos-grid">
         <div class="p3-video-card">
           <div class="p3-video-box">
-            <iframe src="https://www.youtube.com/embed/qCjGKxqjVG4" title="Sensores" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/qCjGKxqjVG4?rel=0" title="Sensores" allowfullscreen></iframe>
           </div>
           <div class="p3-video-caption">Sensores</div>
         </div>
-
         <div class="p3-video-card">
           <div class="p3-video-box">
-            <iframe src="https://www.youtube.com/embed/j79tpR6l_PY" title="Motores" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/j79tpR6l_PY?rel=0" title="Motores" allowfullscreen></iframe>
           </div>
           <div class="p3-video-caption">Motores</div>
         </div>
+      </div>
+    </div>
 
+    <div class="p3-section">
+      <div class="p3-label">Análisis</div>
+      <div class="p3-title">Diagrama de Ishikawa</div>
+      <div class="p3-diagrama-slot"><img class="zoomable" src="https://i.postimg.cc/W17V7Cws/Diagrama-de-Ishikawa.png" alt="Diagrama de Ishikawa"></div>
+      <div class="p3-anexo">
+        <a class="p3-anexo-btn" href="https://drive.google.com/file/d/1S_Ug3DE8mbZ9K0nhfopnNVqwNP16ziVd/view?usp=sharing" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Tabla anexa
+        </a>
       </div>
     </div>
 
@@ -372,15 +427,20 @@ body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0}
       <div class="p3-label">Presupuesto</div>
       <div class="p3-title">Costos del robot</div>
       <div class="p3-costos-grid" data-costos></div>
+      <div class="p3-total">
+        <div class="p3-total-label">Total del proyecto</div>
+        <div class="p3-total-value" data-total>$ 163.000</div>
+      </div>
+    </div>
+
+    <div class="p3-section">
+      <div class="p3-label">Justificación</div>
+      <div class="p3-title">¿Por qué estos componentes?</div>
+      <div class="p3-text-block">Se eligieron estos componentes debido a que queremos los costos bajos y un robot funcional. Por ejemplo, el VL53L0X es un sensor con rango suficiente para evitar un obstáculo en el camino, pero no se podían poner varios del mismo tipo ya que necesitan los GPIO RX y TX; entonces, si se pusieran varios, habría que configurarlos de una manera más complicada. Por eso preferimos optar por poner un fotodiodo, que cumple la misma función aunque dentro de un rango más pequeño, pero si se necesitaran poner más no se tendría ningún problema. En el caso del GPS fuimos por el NEO-7M debido a que es bastante usado en drones y robótica de bajo costo, sin ofrecer muchos problemas aparte del arranque lento o su tasa de actualización baja (que se puede subir, aunque no demasiado). En cuanto al puente H L298N, se decidió por su bajo costo, facilidad de uso y versatilidad, aunque puede que se cambie (ya que sufre problemas de calor y es bastante grande comparado a otros modelos), pero de momento es una buena elección para lo que buscamos lograr este semestre.</div>
     </div>
 
     <div class="p3-docs-section">
       <div class="p3-docs-inner">
-        <div class="p3-docs-title">Documentación del proyecto</div>
-        <div class="p3-docs-grid">
-          <a class="p3-doc-btn" href="falta" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Documento</a>
-          <a class="p3-doc-btn" href="falta" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Proyecto Relacionado</a>
-        </div>
         <div class="p3-footer-note">© 2026 · AgroView · Tecnología en Automatización Industrial</div>
       </div>
     </div>
@@ -400,19 +460,13 @@ const EQUIPO = [
   ['KR', 'Katherine Rincón']
 ];
 
-const GPS = [
-  ['', 'Prueba GPS 1'],
-  ['', 'Prueba GPS 2'],
-  ['', 'Prueba GPS 3']
-];
-
 const COSTOS = [
-  ['Motores',              '$ 0', 'https://i.postimg.cc/85FY2rRZ/Motores.jpg'],
-  ['Puente H',             '$ 0', 'https://i.postimg.cc/kMbZwKXV/Puente-H.jpg'],
-  ['Sensor de movimiento', '$ 0', 'https://i.postimg.cc/gky7bphk/Sensor-de-movimiento.png'],
-  ['Fotodiodo',            '$ 0', 'https://i.postimg.cc/nLWRGcyD/Fotodiodo.jpg'],
-  ['GPS',                  '$ 0', 'https://i.postimg.cc/wM8wn4Tg/GPS.jpg'],
-  ['Misceláneos',          '$ 0', 'https://i.postimg.cc/J7Z6j8PG/Miscelanios.png']
+  ['Motores',              '$ 8.000',  'https://i.postimg.cc/85FY2rRZ/Motores.jpg'],
+  ['Puente H',             '$ 15.000', 'https://i.postimg.cc/kMbZwKXV/Puente-H.jpg'],
+  ['Sensor de movimiento', '$ 20.000', 'https://i.postimg.cc/gky7bphk/Sensor-de-movimiento.png'],
+  ['Fotodiodo',            '$ 10.000', 'https://i.postimg.cc/nLWRGcyD/Fotodiodo.jpg'],
+  ['GPS',                  '$ 50.000', 'https://i.postimg.cc/wM8wn4Tg/GPS.jpg'],
+  ['Misceláneos',          '$ 60.000', 'https://i.postimg.cc/J7Z6j8PG/Miscelanios.png']
 ];
 
 const teamHTML = (cls) => EQUIPO.map(([i, n]) =>
@@ -422,13 +476,13 @@ const teamHTML = (cls) => EQUIPO.map(([i, n]) =>
 document.querySelectorAll('[data-team]').forEach(g => g.innerHTML = teamHTML('team'));
 document.querySelectorAll('.p3-team-grid').forEach(g => g.innerHTML = teamHTML('p3-team'));
 
-document.querySelector('[data-gps]').innerHTML = GPS.map(([src, alt]) =>
-  `<div class="p3-gps-card"><div class="p3-gps-photo"><img class="zoomable" src="${src}" alt="${alt}"></div></div>`
-).join('');
-
 document.querySelector('[data-costos]').innerHTML = COSTOS.map(([n, p, src]) =>
   `<div class="p3-costo-card"><div class="p3-costo-photo"><img class="zoomable" src="${src}" alt="${n}"></div><div class="p3-costo-body"><div class="p3-costo-name">${n}</div><div class="p3-costo-value">${p}</div></div></div>`
 ).join('');
+
+const total = COSTOS.reduce((s, [, p]) => s + Number(p.replace(/[^0-9]/g, '')), 0);
+document.querySelector('[data-total]').textContent =
+  '$ ' + total.toLocaleString('es-CO');
 
 function showPage(num, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
